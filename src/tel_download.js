@@ -139,9 +139,10 @@
   };
 
   const completeProgress = (videoId) => {
-    const progressBar = document
-      .getElementById("tel-downloader-progress-" + videoId)
-      ?.querySelector("div.progress");
+    const progressContainer = document.getElementById(
+      "tel-downloader-progress-" + videoId
+    );
+    const progressBar = progressContainer?.querySelector("div.progress");
     if (!progressBar) return;
     const counter = progressBar.querySelector("p");
     const fill = progressBar.querySelector("div");
@@ -150,6 +151,7 @@
       fill.style.backgroundColor = "#B6C649";
       fill.style.width = "100%";
     }
+    window.setTimeout(() => progressContainer.remove(), 500);
   };
 
   const AbortProgress = (videoId) => {
