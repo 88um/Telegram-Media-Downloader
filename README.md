@@ -55,16 +55,26 @@ User scripts put you in control of your  browsing experience. Once installed, th
 ## How to Use
 This script only works on Telegram Webapp.
 
-For channels and chats that allow saving content, this script will have no effect. Please just use the official download button provided by the telegram webapp instead.
+For channels and chats that allow saving content, you can continue to use Telegram's official download button. For channels and chats that disable downloading and restrict saving content, the script restores download controls for images, GIFs, videos, and supported audio.
 
-For channels and chats that disable downloading and restrict saving content, this script will add the download button back for images, GIFs and videos.
+### Download from the chat
+Each supported visual media message in the active chat gets a **Download** button below the media on both WebA and WebK, plus a circular download shortcut on the media itself. Either control downloads the item without opening Telegram's media viewer.
+
+Albums also get a checkbox for every available item and a **Download selected (N)** button. All album items are selected by default. Clear any checkbox to exclude it; when zero items are selected, the album download button is disabled.
+
+In-chat downloads use one global queue and run sequentially. This avoids overlapping large downloads and continues with the next item if one item fails. Your browser may ask you to allow **multiple downloads** for Telegram; allow that permission to download a selected album or several queued items.
+
+On WebA, an unloaded video that only shows the large play icon does not expose a usable media URL. Start the video once so Telegram loads it, then use the in-chat download button. This limitation does not affect already loaded videos or images.
+
+### Download from the media viewer or stories
+The existing media-viewer, story, and WebK pinned-media controls are retained. Open a supported image, GIF, video, story, voice message, or circle video and use the added download button as before. Single video and audio downloads continue to use the browser's save-file picker when it is available; image downloads retain the existing direct browser download behavior.
 
 ![Image Download](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExY2VjNmU2ZDM0YTFlOWY4YTMzZDZmNjVlMDE2ODQ4OGY4N2E3MDFkNSZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/lqCVcw0pCd2VA3zqoE/giphy.gif)
 ![GIF Download](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzYwMzM3ZTMzYmI1MzA4M2EyYmY0NTFlOTg4OWFhNjhjNDk5YTkzYiZlcD12MV9pbnRlcm5hbF9naWZzX2dpZklkJmN0PWc/wnYzW4vwpPdeuo62nQ/giphy.gif)
 ![Video Download](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMXcxYnJxaXMxcW05YW5rZ2YzZzE0bTU4aTBwYXI1N3pmdnVzbDFrdSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/EEPbblwmSpteAmwLls/giphy.gif)
 ![Story Download](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3Z5Y2VzM2QzbW1xc3ZwNTQ2N3Q0a3lnanpxdW55c2Qzajl5NXZsaCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xJFjBGi8isHPR5cuHl/giphy.gif)
 
-For videos, a progress bar will show on the bottom-right corder after you started downloading. For images and audios, there won't be a progress bar.
+For videos, a progress bar appears in the bottom-right corner after the download starts. Images and audio do not show a progress bar.
 
 ### Supported Webapp Versions
 There are 2 different versions of telegram webapps:
